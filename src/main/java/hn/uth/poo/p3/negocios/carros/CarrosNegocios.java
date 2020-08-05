@@ -30,12 +30,12 @@ public class CarrosNegocios {
             throw new Exception("Error: el No. de añio no debe ser menor o igual a 0");                
             }
             if (carros.getNumeroMotor()<0) {
-                throw new Exception("El RTN no debe ser menor o igual a 0");
+                throw new Exception("El NO. de motor no debe ser menor 0");
+            }
+            if (carros.getPlaca()<0) {
+                throw new Exception("El No. de placa no debe ser menor a 0");
             }
             if (carros.get()<0) {
-                throw new Exception("El No. de telefono no debe ser menor a 0");
-            }
-            if (clientes.getCorreo().isEmpty()) {
                 throw new Exception("El Correo no debe estar vacio");
             }
             if (clientes.getDireccion().isEmpty()) {

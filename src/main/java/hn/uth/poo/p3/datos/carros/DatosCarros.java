@@ -38,6 +38,7 @@ public class DatosCarros {
                 carro.setAño(rs.getInt(4));
                 carro.setNumeroMotor(rs.getInt(5));
                 carro.setPlaca(rs.getInt(6));
+                carro.setVIN(rs.getInt(7));
                 Carros.add(carro);
             }
             cn.close();
@@ -56,6 +57,7 @@ public class DatosCarros {
             ps.setInt(4, carro.getAño());  
             ps.setInt(5, carro.getNumeroMotor());
             ps.setInt(6, carro.getPlaca()); 
+            ps.setInt(7, carro.getVIN()); 
             ps.execute();
             ps.close();
             cn.close();
@@ -76,6 +78,7 @@ public class DatosCarros {
             ps.setInt(4, carro.getAño());  
             ps.setInt(5, carro.getNumeroMotor());
             ps.setInt(6, carro.getPlaca()); 
+            ps.setInt(7, carro.getVIN()); 
             ps.execute();
             ps.execute();
             ps.close();
@@ -89,7 +92,7 @@ public class DatosCarros {
     public static String EliminarCarros(Carros carro){
         try {
             Connection cn=Conexion.ObtenerConexion();
-            String sql="DELETE CLIENTES SET IDENTIDAD=? WHERE NOMBRE=?";
+            String sql="DELETE CARROS SET IDENTIDAD=? WHERE NOMBRE=?";
             PreparedStatement ps=cn.prepareStatement(sql);
             ps.setObject(1, carro.getColor());
             ps.setObject(2, carro.getMarca());
@@ -97,6 +100,7 @@ public class DatosCarros {
             ps.setInt(4, carro.getAño());  
             ps.setInt(5, carro.getNumeroMotor());
             ps.setInt(6, carro.getPlaca()); 
+            ps.setInt(7, carro.getVIN()); 
             ps.execute();
             ps.execute();
             ps.close();
@@ -112,7 +116,7 @@ public class DatosCarros {
         try {
             Connection cn=Conexion.ObtenerConexion();
             Statement st=cn.createStatement();
-            String sql="SELECT MODELO, PLACA, COLOR FROM CLIENTES WHERE UPPER(MODELO) LIKE ?";
+            String sql="SELECT MODELO, PLACA, COLOR FROM CARROS WHERE UPPER(MODELO) LIKE ?";
             PreparedStatement ps=cn.prepareStatement(sql);
             //ps.setString(1, "%"+carro.getMarca().toUpperCase()+"%");
             ResultSet rs=ps.executeQuery();
