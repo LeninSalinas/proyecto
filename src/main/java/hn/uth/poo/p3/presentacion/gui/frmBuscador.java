@@ -73,51 +73,78 @@ public class frmBuscador extends javax.swing.JFrame {
         btnBuscar = new javax.swing.JButton();
         btnLeer = new javax.swing.JButton();
         btnRegistrarCliente = new javax.swing.JButton();
+        jLabel7 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        jLabel1.setFont(new java.awt.Font("MingLiU-ExtB", 1, 24)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Consulta de los Clientes");
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 30, -1, -1));
 
+        jLabel2.setFont(new java.awt.Font("MingLiU-ExtB", 0, 12)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 255, 0));
         jLabel2.setText("Nombre del Cliente");
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 160, -1, -1));
 
-        jLabel3.setText(" No. Identidad del Cliente");
+        jLabel3.setFont(new java.awt.Font("MingLiU-ExtB", 0, 12)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(255, 255, 0));
+        jLabel3.setText(" No.ID Cliente");
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 160, -1, -1));
 
+        jLabel4.setFont(new java.awt.Font("MingLiU-ExtB", 0, 12)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(255, 255, 0));
         jLabel4.setText("Marca del carro");
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 160, -1, -1));
 
+        jLabel5.setFont(new java.awt.Font("MingLiU-ExtB", 0, 12)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(255, 255, 0));
         jLabel5.setText("No. de Placa");
+        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 160, 80, -1));
 
+        jLabel6.setFont(new java.awt.Font("MingLiU-ExtB", 0, 12)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(255, 255, 0));
         jLabel6.setText("Color del Carro");
+        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 160, -1, -1));
 
         txtPlaca.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtPlacaActionPerformed(evt);
             }
         });
+        getContentPane().add(txtPlaca, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 190, 109, -1));
 
         txtColor.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtColorActionPerformed(evt);
             }
         });
+        getContentPane().add(txtColor, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 190, 98, -1));
 
         txtMarca.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtMarcaActionPerformed(evt);
             }
         });
+        getContentPane().add(txtMarca, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 190, 99, -1));
 
         txtIdCliente.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtIdClienteActionPerformed(evt);
             }
         });
+        getContentPane().add(txtIdCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 190, 114, -1));
 
         txtNomCliente.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtNomClienteActionPerformed(evt);
             }
         });
+        getContentPane().add(txtNomCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 190, 107, -1));
 
+        tblDatos.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        tblDatos.setFont(new java.awt.Font("MingLiU-ExtB", 0, 11)); // NOI18N
         tblDatos.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
@@ -148,118 +175,52 @@ public class frmBuscador extends javax.swing.JFrame {
         });
         jScrollPane1.setViewportView(tblDatos);
 
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 330, -1, 152));
+
+        btnRegistrarCarro.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hn/uth/poo/p3/recursos/imagenes1/icons8-car-badge-16.png"))); // NOI18N
         btnRegistrarCarro.setText("Registrar Carro");
         btnRegistrarCarro.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnRegistrarCarroActionPerformed(evt);
             }
         });
+        getContentPane().add(btnRegistrarCarro, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 280, 130, -1));
 
+        btnActualizar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hn/uth/poo/p3/recursos/imagenes1/icons8-refresh-16.png"))); // NOI18N
         btnActualizar.setText("Actualizar");
+        getContentPane().add(btnActualizar, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 240, -1, -1));
 
+        btnEliminar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hn/uth/poo/p3/recursos/imagenes1/icons8-delete-document-16.png"))); // NOI18N
         btnEliminar.setText("Eliminar Datos ");
+        getContentPane().add(btnEliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 280, -1, -1));
 
+        btnBuscar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hn/uth/poo/p3/recursos/imagenes1/icons8-search-16.png"))); // NOI18N
         btnBuscar.setText("Buscar Datos");
+        getContentPane().add(btnBuscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 240, -1, -1));
 
+        btnLeer.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hn/uth/poo/p3/recursos/imagenes1/icons8-read-16.png"))); // NOI18N
         btnLeer.setText("Leer Datos");
         btnLeer.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnLeerActionPerformed(evt);
             }
         });
+        getContentPane().add(btnLeer, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 280, -1, -1));
 
+        btnRegistrarCliente.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hn/uth/poo/p3/recursos/imagenes1/icons8-check-file-16.png"))); // NOI18N
         btnRegistrarCliente.setText("Registrar Cliente");
         btnRegistrarCliente.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnRegistrarClienteActionPerformed(evt);
             }
         });
+        getContentPane().add(btnRegistrarCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 240, -1, -1));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(30, 30, 30)
-                        .addComponent(txtNomCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(14, 14, 14)
-                        .addComponent(txtIdCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(txtMarca, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(txtPlaca, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(29, 29, 29)
-                        .addComponent(txtColor, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(100, 100, 100)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(btnRegistrarCliente)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(btnRegistrarCarro)
-                        .addGap(14, 14, 14)
-                        .addComponent(btnActualizar)
-                        .addGap(26, 26, 26)
-                        .addComponent(btnEliminar)
-                        .addGap(27, 27, 27)
-                        .addComponent(btnBuscar)
-                        .addGap(18, 18, 18)
-                        .addComponent(btnLeer))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(30, 30, 30)
-                                .addComponent(jLabel2)
-                                .addGap(23, 23, 23)
-                                .addComponent(jLabel3)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jLabel4))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(264, 264, 264)
-                                .addComponent(jLabel1)))
-                        .addGap(46, 46, 46)
-                        .addComponent(jLabel5)
-                        .addGap(65, 65, 65)
-                        .addComponent(jLabel6)))
-                .addContainerGap(17, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(23, 23, 23)
-                .addComponent(jLabel1)
-                .addGap(35, 35, 35)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel2)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jLabel3)
-                        .addComponent(jLabel4))
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jLabel5)
-                        .addComponent(jLabel6)))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(txtNomCliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(txtIdCliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(txtMarca, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtPlaca, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtColor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(35, 35, 35)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnBuscar)
-                    .addComponent(btnLeer)
-                    .addComponent(btnEliminar)
-                    .addComponent(btnActualizar)
-                    .addComponent(btnRegistrarCarro)
-                    .addComponent(btnRegistrarCliente))
-                .addGap(28, 28, 28)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(44, Short.MAX_VALUE))
-        );
+        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hn/uth/poo/p3/recursos/imagenes1/geometrical-background-design_1078-66.jpg"))); // NOI18N
+        jLabel7.setMaximumSize(new java.awt.Dimension(500, 400));
+        jLabel7.setMinimumSize(new java.awt.Dimension(500, 400));
+        jLabel7.setPreferredSize(new java.awt.Dimension(500, 400));
+        getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 630, 610));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -330,6 +291,7 @@ public class frmBuscador extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable tblDatos;
     private javax.swing.JTextField txtColor;
