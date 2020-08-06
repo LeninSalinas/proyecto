@@ -70,6 +70,7 @@ public class frmCarros extends javax.swing.JInternalFrame {
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 11)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Marca:");
+
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 80, -1, -1));
 
         lblModelo.setFont(new java.awt.Font("Segoe UI", 1, 11)); // NOI18N
@@ -87,9 +88,22 @@ public class frmCarros extends javax.swing.JInternalFrame {
         lblNumeroMotor.setText("Numero del Motor:");
         getContentPane().add(lblNumeroMotor, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 180, -1, -1));
 
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(31, 84, -1, -1));
+
+        lblModelo.setText("Modelo");
+        getContentPane().add(lblModelo, new org.netbeans.lib.awtextra.AbsoluteConstraints(31, 112, -1, -1));
+
+        lblAnio.setText("Año");
+        getContentPane().add(lblAnio, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 140, -1, -1));
+
+        lblNumeroMotor.setText("Numero del Motor");
+        getContentPane().add(lblNumeroMotor, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 166, -1, -1));
+
+
         lblVIN.setFont(new java.awt.Font("Segoe UI", 1, 11)); // NOI18N
         lblVIN.setForeground(new java.awt.Color(255, 255, 255));
         lblVIN.setText("VIN:");
+
         getContentPane().add(lblVIN, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 210, -1, -1));
 
         lblPlaca.setFont(new java.awt.Font("Segoe UI", 1, 11)); // NOI18N
@@ -97,26 +111,43 @@ public class frmCarros extends javax.swing.JInternalFrame {
         lblPlaca.setText("Placa:");
         getContentPane().add(lblPlaca, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 240, -1, -1));
 
+        getContentPane().add(lblVIN, new org.netbeans.lib.awtextra.AbsoluteConstraints(34, 192, -1, -1));
+
+        lblPlaca.setText("Placa");
+        getContentPane().add(lblPlaca, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 223, -1, -1));
+
+
         txtModelo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtModeloActionPerformed(evt);
             }
         });
+
         getContentPane().add(txtModelo, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 140, 136, -1));
+
+        getContentPane().add(txtModelo, new org.netbeans.lib.awtextra.AbsoluteConstraints(114, 137, 136, -1));
+
 
         txtAnio.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtAnioActionPerformed(evt);
             }
         });
+
         getContentPane().add(txtAnio, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 170, 136, -1));
+
+        getContentPane().add(txtAnio, new org.netbeans.lib.awtextra.AbsoluteConstraints(114, 163, 136, -1));
+
 
         txtNumeroMotor.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtNumeroMotorActionPerformed(evt);
             }
         });
+
         getContentPane().add(txtNumeroMotor, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 200, 136, -1));
+
+        getContentPane().add(txtNumeroMotor, new org.netbeans.lib.awtextra.AbsoluteConstraints(113, 189, 136, -1));
 
         txtMarca.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -125,12 +156,16 @@ public class frmCarros extends javax.swing.JInternalFrame {
         });
         getContentPane().add(txtMarca, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 80, 136, -1));
 
+        getContentPane().add(txtMarca, new org.netbeans.lib.awtextra.AbsoluteConstraints(114, 78, 136, -1));
+
         txtVIN.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtVINActionPerformed(evt);
             }
         });
         getContentPane().add(txtVIN, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 230, 136, -1));
+
+        getContentPane().add(txtVIN, new org.netbeans.lib.awtextra.AbsoluteConstraints(113, 220, 136, -1));
 
         txtPlaca.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -139,12 +174,15 @@ public class frmCarros extends javax.swing.JInternalFrame {
         });
         getContentPane().add(txtPlaca, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 110, 136, -1));
 
+        getContentPane().add(txtPlaca, new org.netbeans.lib.awtextra.AbsoluteConstraints(114, 109, 136, -1));
+
         txtColor.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtColorActionPerformed(evt);
             }
         });
         getContentPane().add(txtColor, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 50, 136, -1));
+        getContentPane().add(txtColor, new org.netbeans.lib.awtextra.AbsoluteConstraints(114, 52, 136, -1));
 
         txtaDatos.setColumns(20);
         txtaDatos.setRows(5);
@@ -165,6 +203,14 @@ public class frmCarros extends javax.swing.JInternalFrame {
             }
         });
         getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 310, 100, 70));
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(324, 100, 233, 141));
+
+        jLabel2.setText("Describa el problema del auto");
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(363, 78, -1, -1));
+
+        jButton1.setBackground(new java.awt.Color(102, 204, 255));
+        jButton1.setText("Enviar Datos");
+        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 330, 100, -1));
 
         jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 11)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
@@ -179,6 +225,8 @@ public class frmCarros extends javax.swing.JInternalFrame {
         jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hn/uth/poo/p3/recursos/imagenes1/3.jpg"))); // NOI18N
         jLabel6.setText("jLabel6");
         getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 580, 430));
+
+        getContentPane().add(jDateChooser1, new org.netbeans.lib.awtextra.AbsoluteConstraints(128, 266, 123, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
