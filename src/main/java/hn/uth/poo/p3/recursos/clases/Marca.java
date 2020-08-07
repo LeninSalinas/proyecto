@@ -10,5 +10,21 @@ package hn.uth.poo.p3.recursos.clases;
  * @author DELL
  */
 public class Marca {
+    private String Marca;
+
+    public Marca() {
+    }
+
+    public Marca(String Marca) {
+        this.Marca = Marca;
+    }
+
+    public String getMarca() {
+        return Marca;
+    }
+
+    public void setMarca(String Marca) {
+        this.Marca = Marca;
+    }
     
 }

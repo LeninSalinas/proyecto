@@ -10,5 +10,22 @@ package hn.uth.poo.p3.recursos.clases;
  * @author DELL
  */
 public class Color {
+    private String Color;
+
+    public Color(String Color) {
+        this.Color = Color;
+    }
+
+    public Color() {
+    }
+
+    
+    public String getColor() {
+        return Color;
+    }
+
+    public void setColor(String Color) {
+        this.Color = Color;
+    }
     
 }

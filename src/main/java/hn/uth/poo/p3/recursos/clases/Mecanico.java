@@ -12,6 +12,10 @@ package hn.uth.poo.p3.recursos.clases;
 public class Mecanico extends Persona{
     private int numeroEmpleado;   
 
+    public Mecanico() {
+    }
+    
+
     public Mecanico(int numeroEmpleado, int Id, String Nombre) {
         super(Id, Nombre);
         this.numeroEmpleado = numeroEmpleado;

@@ -10,5 +10,22 @@ package hn.uth.poo.p3.recursos.clases;
  * @author DELL
  */
 public class Repuestos {
+    private String Repuestos;
+
+    public Repuestos() {
+    }
+
+    public Repuestos(String Repuestos) {
+        this.Repuestos = Repuestos;
+    }
+
+    public String getRepuestos() {
+        return Repuestos;
+    }
+
+    public void setRepuestos(String Repuestos) {
+        this.Repuestos = Repuestos;
+    }
+    
     
 }

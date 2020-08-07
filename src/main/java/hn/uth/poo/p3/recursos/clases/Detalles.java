@@ -14,6 +14,9 @@ public class Detalles {
     private boolean pintura;
     private int numeroRepuestos;
 
+    public Detalles() {
+    }
+
     public Detalles(String Impacto, boolean pintura, int numeroRepuestos) {
         this.Impacto = Impacto;
         this.pintura = pintura;
