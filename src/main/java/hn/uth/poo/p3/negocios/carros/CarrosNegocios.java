@@ -35,15 +35,10 @@ public class CarrosNegocios {
             if (carros.getPlaca()<0) {
                 throw new Exception("El No. de placa no debe ser menor a 0");
             }
-            if (carros.get()<0) {
-                throw new Exception("El Correo no debe estar vacio");
+            if (carros.getVIN()<0) {
+                throw new Exception("El VIN es invalido");
             }
-            if (clientes.getDireccion().isEmpty()) {
-                throw new Exception("La direccion no debe estar vacia");
-            }
-            if (clientes.getLicencia().isEmpty()) {
-                throw new Exception("La licencia no debe estar vacia");
-            }
+        
             respuesta=DatosCarros.InsertarCarros(carros);
             if (respuesta==null) {
                 respuesta="Guardado exitosamente";
