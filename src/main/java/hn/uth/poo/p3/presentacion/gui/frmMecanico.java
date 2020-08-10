@@ -28,57 +28,65 @@ public class frmMecanico extends javax.swing.JFrame {
     private void initComponents() {
 
         jLabel6 = new javax.swing.JLabel();
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
+        lblTitulo = new javax.swing.JLabel();
+        lblFechaFinal = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTextArea1 = new javax.swing.JTextArea();
+        txtaDiagnostico = new javax.swing.JTextArea();
         jScrollPane2 = new javax.swing.JScrollPane();
-        jTextArea2 = new javax.swing.JTextArea();
-        jLabel3 = new javax.swing.JLabel();
+        txtaListRespuesto = new javax.swing.JTextArea();
+        Diagnostico = new javax.swing.JLabel();
         jDateChooser1 = new com.toedter.calendar.JDateChooser();
-        jLabel4 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
+        lblListaRepuesto = new javax.swing.JLabel();
+        lblFondo = new javax.swing.JLabel();
 
         jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hn/uth/poo/p3/recursos/imagenes1/car-auto-mechanic-maintenance-automobile-repair-shop-clip-art-repair.jpg"))); // NOI18N
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        getContentPane().setLayout(null);
 
-        jLabel1.setFont(new java.awt.Font("Rockwell", 1, 24)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(0, 51, 51));
-        jLabel1.setText("Mecánico");
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 30, -1, -1));
+        lblTitulo.setFont(new java.awt.Font("Rockwell", 1, 24)); // NOI18N
+        lblTitulo.setForeground(new java.awt.Color(0, 51, 51));
+        lblTitulo.setText("Mecánico");
+        getContentPane().add(lblTitulo);
+        lblTitulo.setBounds(240, 30, 110, 32);
 
-        jLabel2.setFont(new java.awt.Font("Levenim MT", 1, 14)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(0, 51, 51));
-        jLabel2.setText("Fecha Final:");
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 230, -1, -1));
+        lblFechaFinal.setFont(new java.awt.Font("Levenim MT", 1, 14)); // NOI18N
+        lblFechaFinal.setForeground(new java.awt.Color(0, 51, 51));
+        lblFechaFinal.setText("Fecha Final:");
+        getContentPane().add(lblFechaFinal);
+        lblFechaFinal.setBounds(270, 250, 85, 19);
 
-        jTextArea1.setColumns(20);
-        jTextArea1.setRows(5);
-        jScrollPane1.setViewportView(jTextArea1);
+        txtaDiagnostico.setColumns(20);
+        txtaDiagnostico.setRows(5);
+        jScrollPane1.setViewportView(txtaDiagnostico);
 
-        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 110, -1, -1));
+        getContentPane().add(jScrollPane1);
+        jScrollPane1.setBounds(50, 150, 166, 96);
 
-        jTextArea2.setColumns(20);
-        jTextArea2.setRows(5);
-        jScrollPane2.setViewportView(jTextArea2);
+        txtaListRespuesto.setColumns(20);
+        txtaListRespuesto.setRows(5);
+        jScrollPane2.setViewportView(txtaListRespuesto);
 
-        getContentPane().add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 110, -1, -1));
+        getContentPane().add(jScrollPane2);
+        jScrollPane2.setBounds(390, 150, 166, 96);
 
-        jLabel3.setFont(new java.awt.Font("Levenim MT", 1, 14)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(0, 51, 51));
-        jLabel3.setText("Diagnostico ");
-        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 90, -1, -1));
-        getContentPane().add(jDateChooser1, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 260, 136, -1));
+        Diagnostico.setFont(new java.awt.Font("Levenim MT", 1, 14)); // NOI18N
+        Diagnostico.setForeground(new java.awt.Color(0, 51, 51));
+        Diagnostico.setText("Diagnostico ");
+        getContentPane().add(Diagnostico);
+        Diagnostico.setBounds(80, 110, 87, 19);
+        getContentPane().add(jDateChooser1);
+        jDateChooser1.setBounds(240, 290, 136, 20);
 
-        jLabel4.setFont(new java.awt.Font("Levenim MT", 1, 14)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(0, 51, 51));
-        jLabel4.setText("Lista de repuestos");
-        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 90, -1, -1));
+        lblListaRepuesto.setFont(new java.awt.Font("Levenim MT", 1, 14)); // NOI18N
+        lblListaRepuesto.setForeground(new java.awt.Color(0, 51, 51));
+        lblListaRepuesto.setText("Lista de repuestos");
+        getContentPane().add(lblListaRepuesto);
+        lblListaRepuesto.setBounds(410, 110, 131, 19);
 
-        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hn/uth/poo/p3/recursos/imagenes1/tuer.jpg"))); // NOI18N
-        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 610, 370));
+        lblFondo.setIcon(new javax.swing.ImageIcon("C:\\Users\\Dell\\Documents\\proyecto2\\src\\main\\java\\hn\\uth\\poo\\p3\\recursos\\imagenes1\\tuer.jpg")); // NOI18N
+        getContentPane().add(lblFondo);
+        lblFondo.setBounds(0, 0, 630, 370);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -119,16 +127,16 @@ public class frmMecanico extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel Diagnostico;
     private com.toedter.calendar.JDateChooser jDateChooser1;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JTextArea jTextArea1;
-    private javax.swing.JTextArea jTextArea2;
+    private javax.swing.JLabel lblFechaFinal;
+    private javax.swing.JLabel lblFondo;
+    private javax.swing.JLabel lblListaRepuesto;
+    private javax.swing.JLabel lblTitulo;
+    private javax.swing.JTextArea txtaDiagnostico;
+    private javax.swing.JTextArea txtaListRespuesto;
     // End of variables declaration//GEN-END:variables
 }

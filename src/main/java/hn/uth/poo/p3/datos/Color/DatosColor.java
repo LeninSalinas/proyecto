@@ -40,7 +40,7 @@ public class DatosColor {
     public static String InsertarColor(Color color){
         try {
             Connection cn=Conexion.ObtenerConexion();
-            String sql="INSERT INTO COLOR VALUES(?,?,?,?,?,?)";
+            String sql="INSERT INTO COLOR VALUES(?)";
             PreparedStatement ps=cn.prepareStatement(sql);
             ps.setString(1, color.getColor());
           

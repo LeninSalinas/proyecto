@@ -7,8 +7,10 @@ package hn.uth.poo.p3.negocios.clientes;
 
 import hn.uth.poo.p3.datos.clientes.DatosClientes;
 import hn.uth.poo.p3.recursos.clases.Cliente;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -20,7 +22,8 @@ public class ClienteNegocios {
     List<Cliente> listaClientes=new ArrayList<>();
         try {
             listaClientes=DatosClientes.LeerClientes();
-        } catch (Exception e) {
+        }catch (Exception e) {
+            JOptionPane.showMessageDialog(null, e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
         }
         return listaClientes;
     }
@@ -64,6 +67,7 @@ public class ClienteNegocios {
         try {
             DatosClientes.ActualizarClientes(clientes);
         } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
         }
     }
     
@@ -71,6 +75,7 @@ public class ClienteNegocios {
         try {
             DatosClientes.EliminarCliente(clientes);
         } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
         }
     }
     

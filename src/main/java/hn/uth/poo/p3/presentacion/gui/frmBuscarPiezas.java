@@ -5,19 +5,42 @@
  */
 package hn.uth.poo.p3.presentacion.gui;
 
+import hn.uth.poo.p3.negocios.clientes.ClienteNegocios;
+import hn.uth.poo.p3.recursos.clases.Cliente;
+import java.util.List;
+import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
+
 /**
  *
  * @author Dell
  */
-public class frmBuscarPiezas extends javax.swing.JInternalFrame {
+public class frmBuscarPiezas extends javax.swing.JFrame {
 
     /**
      * Creates new form frmBuscarPiezas
-     */
+     */    
+    DefaultTableModel modelo;
+    //frmCarros carro=new frmCarros();
+    //frmCliente cliente=new frmCliente();
     public frmBuscarPiezas() {
-        initComponents();
+        initComponents();  
+        modelo=(DefaultTableModel) tblDatos.getModel();
+        setSize(696, 674);
+        setLocationRelativeTo(null);
     }
-
+    public void Leer(){
+        try {
+            List<Cliente> listaCliente=new ClienteNegocios().Leer();
+            modelo.setRowCount(0);
+            for (Cliente cliente : listaCliente) {
+                Object registroLeido[]={cliente.getNombre(),cliente.getId()};
+                modelo.addRow(registroLeido);
+            }
+            tblDatos.setModel(modelo);
+        } catch (Exception e) {
+        }
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -27,21 +50,209 @@ public class frmBuscarPiezas extends javax.swing.JInternalFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 435, Short.MAX_VALUE)
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 335, Short.MAX_VALUE)
-        );
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        lblTitulo = new javax.swing.JLabel();
+        txtCodigo = new javax.swing.JTextField();
+        txtProducto = new javax.swing.JTextField();
+        txtNoSerie = new javax.swing.JTextField();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        tblDatos = new javax.swing.JTable();
+        btnActualizar = new javax.swing.JButton();
+        btnEliminar = new javax.swing.JButton();
+        btnBuscar = new javax.swing.JButton();
+        btnLeer = new javax.swing.JButton();
+        jLabel4 = new javax.swing.JLabel();
+
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        getContentPane().setLayout(null);
+
+        jLabel1.setFont(new java.awt.Font("Arial Black", 0, 14)); // NOI18N
+        jLabel1.setText("Codigo");
+        getContentPane().add(jLabel1);
+        jLabel1.setBounds(120, 100, 52, 21);
+
+        jLabel2.setFont(new java.awt.Font("Arial Black", 0, 14)); // NOI18N
+        jLabel2.setText("Producto");
+        getContentPane().add(jLabel2);
+        jLabel2.setBounds(300, 100, 67, 21);
+
+        jLabel3.setFont(new java.awt.Font("Arial Black", 0, 14)); // NOI18N
+        jLabel3.setText("Numero de serie");
+        getContentPane().add(jLabel3);
+        jLabel3.setBounds(470, 100, 125, 21);
+
+        lblTitulo.setFont(new java.awt.Font("Arial Black", 0, 24)); // NOI18N
+        lblTitulo.setForeground(new java.awt.Color(255, 51, 51));
+        lblTitulo.setText("Consulta de piezas");
+        getContentPane().add(lblTitulo);
+        lblTitulo.setBounds(230, 40, 270, 40);
+
+        txtCodigo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtCodigoActionPerformed(evt);
+            }
+        });
+        getContentPane().add(txtCodigo);
+        txtCodigo.setBounds(80, 130, 130, 30);
+
+        txtProducto.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtProductoActionPerformed(evt);
+            }
+        });
+        getContentPane().add(txtProducto);
+        txtProducto.setBounds(270, 130, 130, 30);
+
+        txtNoSerie.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtNoSerieActionPerformed(evt);
+            }
+        });
+        getContentPane().add(txtNoSerie);
+        txtNoSerie.setBounds(470, 130, 130, 30);
+
+        tblDatos.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Codigo", "Producto", "Numero de serie", "Precio", "Existencia", "Originalidad"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.Integer.class, java.lang.String.class, java.lang.String.class, java.lang.Double.class, java.lang.Boolean.class, java.lang.String.class
+            };
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false, false
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        jScrollPane1.setViewportView(tblDatos);
+
+        getContentPane().add(jScrollPane1);
+        jScrollPane1.setBounds(60, 300, 600, 402);
+
+        btnActualizar.setIcon(new javax.swing.ImageIcon("C:\\Users\\Dell\\Documents\\proyecto2\\src\\main\\java\\hn\\uth\\poo\\p3\\recursos\\imagenes1\\icons8-refresh-16.png")); // NOI18N
+        btnActualizar.setText("Actualizar");
+        getContentPane().add(btnActualizar);
+        btnActualizar.setBounds(90, 220, 99, 25);
+
+        btnEliminar.setText("Eliminar Datos ");
+        btnEliminar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEliminarActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btnEliminar);
+        btnEliminar.setBounds(230, 250, 103, 23);
+
+        btnBuscar.setText("Buscar Datos");
+        getContentPane().add(btnBuscar);
+        btnBuscar.setBounds(370, 220, 95, 23);
+
+        btnLeer.setText("Leer Datos");
+        btnLeer.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnLeerActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btnLeer);
+        btnLeer.setBounds(510, 260, 85, 23);
+
+        jLabel4.setIcon(new javax.swing.ImageIcon("C:\\Users\\Dell\\Documents\\proyecto2\\src\\main\\java\\hn\\uth\\poo\\p3\\recursos\\imagenes1\\tuercas.jpg")); // NOI18N
+        getContentPane().add(jLabel4);
+        jLabel4.setBounds(0, 0, 700, 670);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void txtCodigoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCodigoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtCodigoActionPerformed
 
+    private void txtProductoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtProductoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtProductoActionPerformed
+
+    private void txtNoSerieActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNoSerieActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtNoSerieActionPerformed
+
+    private void btnEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarActionPerformed
+        // TODO add your handling code here:
+
+        //int id = Integer.parseInt(txtc.getText());
+        int elijoBotonParaEliminar = JOptionPane.showConfirmDialog(null, "¿Desea eliminar?","Mensaje",JOptionPane.OK_CANCEL_OPTION);
+        if(elijoBotonParaEliminar == 0){
+            //this.eliminar(id);
+            //limpiar();
+        }
+    }//GEN-LAST:event_btnEliminarActionPerformed
+
+    private void btnLeerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLeerActionPerformed
+        // TODO add your handling code here:
+        Leer();
+    }//GEN-LAST:event_btnLeerActionPerformed
+
+/**
+     * @param args the command line arguments
+     */
+    public static void main(String args[]) {
+        /* Set the Nimbus look and feel */
+        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
+        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
+         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
+         */
+        try {
+            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
+                if ("Nimbus".equals(info.getName())) {
+                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
+                    break;
+                }
+            }
+        } catch (ClassNotFoundException ex) {
+            java.util.logging.Logger.getLogger(frmPrincipal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (InstantiationException ex) {
+            java.util.logging.Logger.getLogger(frmPrincipal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (IllegalAccessException ex) {
+            java.util.logging.Logger.getLogger(frmPrincipal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+            java.util.logging.Logger.getLogger(frmPrincipal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        }
+        //</editor-fold>
+        //</editor-fold>
+
+        /* Create and display the form */
+        java.awt.EventQueue.invokeLater(new Runnable() {
+            public void run() {
+                new frmBuscarPiezas().setVisible(true);
+            }
+        });
+    }
+    
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnActualizar;
+    private javax.swing.JButton btnBuscar;
+    private javax.swing.JButton btnEliminar;
+    private javax.swing.JButton btnLeer;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JLabel lblTitulo;
+    private javax.swing.JTable tblDatos;
+    private javax.swing.JTextField txtCodigo;
+    private javax.swing.JTextField txtNoSerie;
+    private javax.swing.JTextField txtProducto;
     // End of variables declaration//GEN-END:variables
 }

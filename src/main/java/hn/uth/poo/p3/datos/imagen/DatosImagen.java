@@ -3,10 +3,10 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package hn.uth.poo.p3.datos.Marca;
+package hn.uth.poo.p3.datos.imagen;
 
 import hn.uth.poo.p3.datos.conexion.Conexion;
-import hn.uth.poo.p3.recursos.clases.Marca;
+import hn.uth.poo.p3.recursos.clases.Imagen;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -17,32 +17,32 @@ import java.util.List;
 
 /**
  *
- * @author DELL
+ * @author Dell
  */
-public class DatosMarca {
-    public static List<Marca> LeerMarca(){
-    List<Marca> Marca =new ArrayList<Marca>();
+public class DatosImagen {
+    public static List<Imagen> LeerImagen(){
+    List<Imagen> Imagen=new ArrayList<Imagen>();
         try {
             Connection cn=Conexion.ObtenerConexion();
             Statement st=cn.createStatement();
-            String sql="SELECT MARCA, FROM MARCA";
+            String sql="SELECT FOTO FROM IMAGEN";
             ResultSet rs=st.executeQuery(sql);
             while (rs.next()) {                
-                Marca marca=new Marca();            
-                marca.setMarca(rs.getString(1));
-                Marca.add(marca);
+                Imagen foto=new Imagen();
+                foto.setFoto(rs.getBytes(1));
+                Imagen.add(foto);
             }
             cn.close();
         } catch (Exception e) {
         }
-        return Marca;
+        return Imagen;
     }
-    public static String InsertarMarca(Marca marca){
+    public static String InsertarImagen(Imagen foto){
         try {
             Connection cn=Conexion.ObtenerConexion();
-            String sql="INSERT INTO MARCA VALUES(?)";
+            String sql="INSERT INTO Imagen VALUES(?)";
             PreparedStatement ps=cn.prepareStatement(sql);
-            ps.setString(1, marca.getMarca());          
+            ps.setObject(1, foto.getFoto());
             ps.execute();
             ps.close();
             cn.close();
@@ -52,28 +52,12 @@ public class DatosMarca {
         }
         return null;
     }
-    public static String ActualizarMarca(Marca marca){
+    public static String ActualizarImagen(Imagen foto){
         try {
             Connection cn=Conexion.ObtenerConexion();
-            String sql="UPDATE MARCA SET MARCA=? WHERE MARCA=?";
+            String sql="UPDATE IMAGEN SET FOTO=? WHERE IMAGEN=?";
             PreparedStatement ps=cn.prepareStatement(sql);
-            ps.setString(1, marca.getMarca());
-            ps.execute();
-            ps.execute();
-            ps.close();
-            cn.close();
-        } catch (Exception e) {
-            e.printStackTrace();
-            return "Error "+ e.getMessage();
-        }
-        return null;
-    }
-    public static String EliminarMarca(Marca marca){
-        try {
-            Connection cn=Conexion.ObtenerConexion();
-            String sql="DELETE MARCA SET MARCA=? WHERE MARCA=?";
-            PreparedStatement ps=cn.prepareStatement(sql);
-            ps.setString(1, marca.getMarca());
+            ps.setObject(1, foto.getFoto());
             ps.execute();
             ps.execute();
             ps.close();
@@ -84,24 +68,41 @@ public class DatosMarca {
         }
         return null;
     }
-    public static List<Marca> BuscarMarca(Marca marca)throws SQLException{
-        List<Marca> Marca=new ArrayList<Marca>();
+    public static String EliminarImagen(Imagen foto){
+        try {
+            Connection cn=Conexion.ObtenerConexion();
+            String sql="DELETE CARROS SET IDENTIDAD=? WHERE NOMBRE=?";
+            PreparedStatement ps=cn.prepareStatement(sql);
+            ps.setObject(1, foto.getFoto());
+            ps.execute();
+            ps.execute();
+            ps.close();
+            cn.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+            return "Error "+ e.getMessage();
+        }
+        return null;
+    }
+    public static List<Imagen> BuscarImagen(Imagen foto)throws SQLException{
+        List<Imagen> imagen=new ArrayList<Imagen>();
         try {
             Connection cn=Conexion.ObtenerConexion();
             Statement st=cn.createStatement();
-            String sql="SELECT MARCA FROM MARCA WHERE UPPER(MARCA) LIKE ?";
+            String sql="SELECT MODELO, PLACA, COLOR FROM CARROS WHERE UPPER(MODELO) LIKE ?";
             PreparedStatement ps=cn.prepareStatement(sql);
-            ps.setString(1, "%"+marca.getMarca().toUpperCase()+"%");
+            //ps.setString(1, "%"+carro.getMarca().toUpperCase()+"%");
             ResultSet rs=ps.executeQuery();
             if (rs.next()) {
                 do {                    
-                    Marca marcaObjeto=new Marca();
-                    marcaObjeto.setMarca(rs.getString(1));
-                    Marca.add(marcaObjeto);
+                    Imagen fotoObjeto=new Imagen();
+                    //carroObjeto.setNombre(rs.getString(6));
+                    //carroObjeto.setId(rs.getInt(7));
+                    imagen.add(fotoObjeto);
                 } while (rs.next());
             } 
             else{
-                throw new SQLException("Error no se encontro coincidencia");
+                throw new SQLException("Error No imagen");
             }
             cn.close();
             rs.close();
@@ -109,7 +110,7 @@ public class DatosMarca {
             throw new SQLException(e.getMessage());
         }
         
-        return Marca;
+        return imagen;
     }
-}
 
+}

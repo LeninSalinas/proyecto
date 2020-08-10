@@ -21,17 +21,14 @@ public class frmBuscador extends javax.swing.JFrame {
      * Creates new form frmBuscador
      */
     DefaultTableModel modelo;
-    frmCarros carro;
-    frmCliente cliente;
     public frmBuscador() {
-        initComponents();
+        initComponents();        
         Inicio();
     }
     public void Inicio(){
-        setLocationRelativeTo(null);
-        carro=new frmCarros();
-        cliente=new frmCliente();
-        modelo=(DefaultTableModel) tblDatos.getModel();
+        modelo=(DefaultTableModel) tblDatos.getModel();  
+        setSize(625, 596);
+        setLocationRelativeTo(null);      
     }
     public void Leer(){
         try {
@@ -43,6 +40,7 @@ public class frmBuscador extends javax.swing.JFrame {
             }
             tblDatos.setModel(modelo);
         } catch (Exception e) {
+                JOptionPane.showMessageDialog(null, e.getMessage(), "ERROR", JOptionPane.ERROR_MESSAGE);      
         }
     }
     /**
@@ -67,97 +65,108 @@ public class frmBuscador extends javax.swing.JFrame {
         txtNomCliente = new javax.swing.JTextField();
         jScrollPane1 = new javax.swing.JScrollPane();
         tblDatos = new javax.swing.JTable();
-        btnRegistrarCarro = new javax.swing.JButton();
-        btnActualizar = new javax.swing.JButton();
+        btnRegistrarCliente = new javax.swing.JButton();
         btnEliminar = new javax.swing.JButton();
         btnBuscar = new javax.swing.JButton();
         btnLeer = new javax.swing.JButton();
-        btnRegistrarCliente = new javax.swing.JButton();
-        jLabel7 = new javax.swing.JLabel();
+        btnRegistrarCarro = new javax.swing.JButton();
+        btnActualizar = new javax.swing.JButton();
+        lblFondo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
-        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        getContentPane().setLayout(null);
 
         jLabel1.setFont(new java.awt.Font("Rockwell", 1, 24)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Consulta de los Clientes");
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 30, -1, -1));
+        getContentPane().add(jLabel1);
+        jLabel1.setBounds(160, 30, 280, 32);
 
         jLabel2.setFont(new java.awt.Font("MingLiU-ExtB", 0, 12)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 0));
         jLabel2.setText("Nombre del Cliente");
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 160, -1, -1));
+        getContentPane().add(jLabel2);
+        jLabel2.setBounds(10, 160, 108, 15);
 
         jLabel3.setFont(new java.awt.Font("MingLiU-ExtB", 0, 12)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 0));
         jLabel3.setText(" No.ID Cliente");
-        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 160, -1, -1));
+        getContentPane().add(jLabel3);
+        jLabel3.setBounds(140, 160, 84, 15);
 
         jLabel4.setFont(new java.awt.Font("MingLiU-ExtB", 0, 12)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(255, 255, 0));
         jLabel4.setText("Marca del carro");
-        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 160, -1, -1));
+        getContentPane().add(jLabel4);
+        jLabel4.setBounds(260, 160, 90, 15);
 
         jLabel5.setFont(new java.awt.Font("MingLiU-ExtB", 0, 12)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(255, 255, 0));
         jLabel5.setText("No. de Placa");
-        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 160, 80, -1));
+        getContentPane().add(jLabel5);
+        jLabel5.setBounds(390, 160, 80, 15);
 
         jLabel6.setFont(new java.awt.Font("MingLiU-ExtB", 0, 12)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(255, 255, 0));
         jLabel6.setText("Color del Carro");
-        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 160, -1, -1));
+        getContentPane().add(jLabel6);
+        jLabel6.setBounds(510, 160, 90, 15);
 
         txtPlaca.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtPlacaActionPerformed(evt);
             }
         });
-        getContentPane().add(txtPlaca, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 190, 109, -1));
+        getContentPane().add(txtPlaca);
+        txtPlaca.setBounds(370, 190, 110, 30);
 
         txtColor.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtColorActionPerformed(evt);
             }
         });
-        getContentPane().add(txtColor, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 190, 98, -1));
+        getContentPane().add(txtColor);
+        txtColor.setBounds(500, 190, 100, 30);
 
         txtMarca.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtMarcaActionPerformed(evt);
             }
         });
-        getContentPane().add(txtMarca, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 190, 99, -1));
+        getContentPane().add(txtMarca);
+        txtMarca.setBounds(260, 190, 99, 30);
 
         txtIdCliente.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtIdClienteActionPerformed(evt);
             }
         });
-        getContentPane().add(txtIdCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 190, 114, -1));
+        getContentPane().add(txtIdCliente);
+        txtIdCliente.setBounds(130, 190, 120, 30);
 
         txtNomCliente.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtNomClienteActionPerformed(evt);
             }
         });
-        getContentPane().add(txtNomCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 190, 107, -1));
+        getContentPane().add(txtNomCliente);
+        txtNomCliente.setBounds(10, 190, 110, 30);
 
         tblDatos.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        tblDatos.setFont(new java.awt.Font("MingLiU-ExtB", 0, 11)); // NOI18N
+        tblDatos.setFont(new java.awt.Font("Consolas", 0, 11)); // NOI18N
         tblDatos.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
             new String [] {
-                "Nombre", "Identidad", "Carro", "No. de Placa", "Color"
+                "Nombre", "Identidad", "Carro", "No. de Placa", "Color", "Imagen"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.String.class, java.lang.Integer.class, java.lang.Object.class, java.lang.Integer.class, java.lang.Object.class
+                java.lang.String.class, java.lang.Integer.class, java.lang.Object.class, java.lang.Integer.class, java.lang.Object.class, java.lang.Byte.class
             };
             boolean[] canEdit = new boolean [] {
-                false, false, false, false, true
+                false, false, false, false, true, false
             };
 
             public Class getColumnClass(int columnIndex) {
@@ -175,52 +184,72 @@ public class frmBuscador extends javax.swing.JFrame {
         });
         jScrollPane1.setViewportView(tblDatos);
 
-        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 330, -1, 152));
+        getContentPane().add(jScrollPane1);
+        jScrollPane1.setBounds(60, 350, 510, 152);
 
-        btnRegistrarCarro.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hn/uth/poo/p3/recursos/imagenes1/icons8-car-badge-16.png"))); // NOI18N
-        btnRegistrarCarro.setText("Registrar Carro");
-        btnRegistrarCarro.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnRegistrarCarroActionPerformed(evt);
-            }
-        });
-        getContentPane().add(btnRegistrarCarro, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 280, 130, -1));
-
-        btnActualizar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hn/uth/poo/p3/recursos/imagenes1/icons8-refresh-16.png"))); // NOI18N
-        btnActualizar.setText("Actualizar");
-        getContentPane().add(btnActualizar, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 240, -1, -1));
-
-        btnEliminar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hn/uth/poo/p3/recursos/imagenes1/icons8-delete-document-16.png"))); // NOI18N
-        btnEliminar.setText("Eliminar Datos ");
-        getContentPane().add(btnEliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 280, -1, -1));
-
-        btnBuscar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hn/uth/poo/p3/recursos/imagenes1/icons8-search-16.png"))); // NOI18N
-        btnBuscar.setText("Buscar Datos");
-        getContentPane().add(btnBuscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 240, -1, -1));
-
-        btnLeer.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hn/uth/poo/p3/recursos/imagenes1/icons8-read-16.png"))); // NOI18N
-        btnLeer.setText("Leer Datos");
-        btnLeer.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnLeerActionPerformed(evt);
-            }
-        });
-        getContentPane().add(btnLeer, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 280, -1, -1));
-
-        btnRegistrarCliente.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hn/uth/poo/p3/recursos/imagenes1/icons8-check-file-16.png"))); // NOI18N
+        btnRegistrarCliente.setIcon(new javax.swing.ImageIcon("C:\\Users\\Dell\\Documents\\proyecto2\\src\\main\\java\\hn\\uth\\poo\\p3\\recursos\\imagenes1\\icons8-check-file-16.png")); // NOI18N
         btnRegistrarCliente.setText("Registrar Cliente");
         btnRegistrarCliente.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnRegistrarClienteActionPerformed(evt);
             }
         });
-        getContentPane().add(btnRegistrarCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 240, -1, -1));
+        getContentPane().add(btnRegistrarCliente);
+        btnRegistrarCliente.setBounds(40, 240, 160, 25);
 
-        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hn/uth/poo/p3/recursos/imagenes1/geometrical-background-design_1078-66.jpg"))); // NOI18N
-        jLabel7.setMaximumSize(new java.awt.Dimension(500, 400));
-        jLabel7.setMinimumSize(new java.awt.Dimension(500, 400));
-        jLabel7.setPreferredSize(new java.awt.Dimension(500, 400));
-        getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 630, 610));
+        btnEliminar.setIcon(new javax.swing.ImageIcon("C:\\Users\\Dell\\Documents\\proyecto2\\src\\main\\java\\hn\\uth\\poo\\p3\\recursos\\imagenes1\\icons8-delete-document-16.png")); // NOI18N
+        btnEliminar.setText("Eliminar Datos ");
+        btnEliminar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEliminarActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btnEliminar);
+        btnEliminar.setBounds(300, 280, 123, 25);
+
+        btnBuscar.setIcon(new javax.swing.ImageIcon("C:\\Users\\Dell\\Documents\\proyecto2\\src\\main\\java\\hn\\uth\\poo\\p3\\recursos\\imagenes1\\icons8-search-16.png")); // NOI18N
+        btnBuscar.setText("Buscar Datos");
+        btnBuscar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnBuscarActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btnBuscar);
+        btnBuscar.setBounds(410, 240, 115, 25);
+
+        btnLeer.setIcon(new javax.swing.ImageIcon("C:\\Users\\Dell\\Documents\\proyecto2\\src\\main\\java\\hn\\uth\\poo\\p3\\recursos\\imagenes1\\icons8-read-16.png")); // NOI18N
+        btnLeer.setText("Leer Datos");
+        btnLeer.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnLeerActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btnLeer);
+        btnLeer.setBounds(490, 290, 120, 25);
+
+        btnRegistrarCarro.setIcon(new javax.swing.ImageIcon("C:\\Users\\Dell\\Documents\\proyecto2\\src\\main\\java\\hn\\uth\\poo\\p3\\recursos\\imagenes1\\icons8-car-badge-16.png")); // NOI18N
+        btnRegistrarCarro.setText("Registrar Carro");
+        btnRegistrarCarro.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnRegistrarCarroActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btnRegistrarCarro);
+        btnRegistrarCarro.setBounds(130, 300, 130, 23);
+
+        btnActualizar.setIcon(new javax.swing.ImageIcon("C:\\Users\\Dell\\Documents\\proyecto2\\src\\main\\java\\hn\\uth\\poo\\p3\\recursos\\imagenes1\\icons8-refresh-16.png")); // NOI18N
+        btnActualizar.setText("Actualizar");
+        btnActualizar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnActualizarActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btnActualizar);
+        btnActualizar.setBounds(240, 230, 100, 25);
+
+        lblFondo.setIcon(new javax.swing.ImageIcon("C:\\Users\\Dell\\Documents\\proyecto2\\src\\main\\java\\hn\\uth\\poo\\p3\\recursos\\imagenes1\\geometrical-background-design_1078-66.jpg")); // NOI18N
+        getContentPane().add(lblFondo);
+        lblFondo.setBounds(0, 0, 620, 600);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -245,27 +274,6 @@ public class frmBuscador extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtNomClienteActionPerformed
 
-    private void btnRegistrarCarroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistrarCarroActionPerformed
-        // TODO add your handling code here:
-//        carro.setVisible(true);
-        try {
-            Cliente clientes=new Cliente();            
-            //clientes.setId(Integer.parseInt(txtId.getText()));
-            clientes.setNombre(txtNomCliente.getText());
-            String respuesta= new ClienteNegocios().Insertar(clientes);
-            JOptionPane.showMessageDialog(null, "Guardado", "EXITO", JOptionPane.INFORMATION_MESSAGE); 
-            Leer();
-        } catch (Exception e) {
-            JOptionPane.showMessageDialog(null, e.getMessage(), "ERROR", JOptionPane.ERROR_MESSAGE);
-        }
-    }//GEN-LAST:event_btnRegistrarCarroActionPerformed
-
-    private void btnRegistrarClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistrarClienteActionPerformed
-        // TODO add your handling code here:
-        carro.setVisible(false);
-        cliente.setVisible(true);
-    }//GEN-LAST:event_btnRegistrarClienteActionPerformed
-
     private void btnLeerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLeerActionPerformed
         // TODO add your handling code here:
         Leer();
@@ -274,9 +282,127 @@ public class frmBuscador extends javax.swing.JFrame {
     private void tblDatosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblDatosMouseClicked
         // TODO add your handling code here:
         int filasSeleccionada=tblDatos.getSelectedRow();
-        txtNomCliente.setText(modelo.getValueAt(filasSeleccionada, 1).toString());
+        txtNomCliente.setText(modelo.getValueAt(filasSeleccionada, 0).toString());
+        txtIdCliente.setText(modelo.getValueAt(filasSeleccionada, 1).toString());
+//        txtMarca.setText(modelo.getValueAt(filasSeleccionada, lo2).toString());
+//        txtPlaca.setText(modelo.getValueAt(filasSeleccionada, 3).toString());
+//        txtColor.setText(modelo.getValueAt(filasSeleccionada, 4).toString());
     }//GEN-LAST:event_tblDatosMouseClicked
 
+    private void btnEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarActionPerformed
+        // TODO add your handling code here:
+        int elijoBotonParaEliminar = JOptionPane.showConfirmDialog(null, "¿Desea eliminar?","Mensaje",JOptionPane.OK_CANCEL_OPTION);
+        if(elijoBotonParaEliminar == 0){
+            try {
+                Cliente clientes=new Cliente();
+                clientes.setNombre(txtNomCliente.getText());
+                clientes.setId(Integer.parseInt(txtIdCliente.getText()));
+                new ClienteNegocios().Eliminar(clientes);                
+                Leer();
+                JOptionPane.showMessageDialog(null, "Eliminado", "EXITO", JOptionPane.INFORMATION_MESSAGE);
+            } catch (Exception e) {
+                JOptionPane.showMessageDialog(null, e.getMessage(), "ERROR", JOptionPane.ERROR_MESSAGE);
+            }
+        }
+    }//GEN-LAST:event_btnEliminarActionPerformed
+
+    private void btnRegistrarClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistrarClienteActionPerformed
+        // TODO add your handling code here: 
+//        frmClientes cliente=new frmClientes();
+//        cliente.setVisible(true);
+            try {
+                Cliente clientes=new Cliente();
+                clientes.setNombre(txtNomCliente.getText());
+                clientes.setId(Integer.parseInt(txtIdCliente.getText()));
+                String respuesta= new ClienteNegocios().Insertar(clientes);
+                JOptionPane.showMessageDialog(null, "Guardado", "EXITO", JOptionPane.INFORMATION_MESSAGE);                              
+            } catch (Exception e) {
+                JOptionPane.showMessageDialog(null, e.getMessage(), "ERROR", JOptionPane.ERROR_MESSAGE);
+            }
+    }//GEN-LAST:event_btnRegistrarClienteActionPerformed
+
+    private void btnBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarActionPerformed
+        // TODO add your handling code here:
+        try {
+                Cliente clientes=new Cliente();
+                clientes.setNombre(txtNomCliente.getText());
+                clientes.setId(Integer.parseInt(txtIdCliente.getText()));
+                List<Cliente> listaCliente= new ClienteNegocios().Buscar(clientes);
+                modelo.setRowCount(0);
+                for (Cliente cliente : listaCliente) {
+                    Object registroLeido[]={cliente.getNombre(),cliente.getId()};
+                    modelo.addRow(registroLeido);
+                }
+                tblDatos.setModel(modelo);
+            } catch (Exception e) {
+                JOptionPane.showMessageDialog(null, e.getMessage(), "ERROR", JOptionPane.ERROR_MESSAGE);
+            }
+    }//GEN-LAST:event_btnBuscarActionPerformed
+
+    private void btnActualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnActualizarActionPerformed
+        // TODO add your handling code here:
+        try {
+                Cliente clientes=new Cliente();
+                clientes.setNombre(txtNomCliente.getText());
+                clientes.setId(Integer.parseInt(txtIdCliente.getText()));
+                new ClienteNegocios().Actualizar(clientes);
+                JOptionPane.showMessageDialog(null, "Actualizado", "EXITO", JOptionPane.INFORMATION_MESSAGE);
+                Leer();
+            } catch (Exception e) {
+                JOptionPane.showMessageDialog(null, e.getMessage(), "ERROR", JOptionPane.ERROR_MESSAGE);
+            }
+    }//GEN-LAST:event_btnActualizarActionPerformed
+
+    private void btnRegistrarCarroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistrarCarroActionPerformed
+        // TODO add your handling code here:
+//        frmCarro carros=new frmCarro();
+//        carros.setVisible(true);
+            try {
+            Cliente clientes=new Cliente();
+            clientes.setNombre(txtNomCliente.getText());
+            clientes.setId(Integer.parseInt(txtIdCliente.getText()));
+            new ClienteNegocios().Leer();
+            Leer();
+            } catch (Exception e) {
+                JOptionPane.showMessageDialog(null, e.getMessage(), "ERROR", JOptionPane.ERROR_MESSAGE);
+            }
+    }//GEN-LAST:event_btnRegistrarCarroActionPerformed
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String args[]) {
+        /* Set the Nimbus look and feel */
+        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
+        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
+         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
+         */
+        try {
+            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
+                if ("Nimbus".equals(info.getName())) {
+                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
+                    break;
+                }
+            }
+        } catch (ClassNotFoundException ex) {
+            java.util.logging.Logger.getLogger(frmPrincipal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (InstantiationException ex) {
+            java.util.logging.Logger.getLogger(frmPrincipal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (IllegalAccessException ex) {
+            java.util.logging.Logger.getLogger(frmPrincipal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+            java.util.logging.Logger.getLogger(frmPrincipal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        }
+        //</editor-fold>
+        //</editor-fold>
+
+        /* Create and display the form */
+        java.awt.EventQueue.invokeLater(new Runnable() {
+            public void run() {
+                new frmBuscador().setVisible(true);
+            }
+        });
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnActualizar;
@@ -291,8 +417,8 @@ public class frmBuscador extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JLabel lblFondo;
     private javax.swing.JTable tblDatos;
     private javax.swing.JTextField txtColor;
     private javax.swing.JTextField txtIdCliente;

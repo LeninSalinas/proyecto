@@ -16,6 +16,8 @@ public class frmFactura extends javax.swing.JFrame {
      */
     public frmFactura() {
         initComponents();
+        setSize(625, 622);
+        setLocationRelativeTo(null);
     }
 
     /**
@@ -43,150 +45,133 @@ public class frmFactura extends javax.swing.JFrame {
         txtRtn = new javax.swing.JTextField();
         txtTelefono = new javax.swing.JTextField();
         txtPlaca = new javax.swing.JTextField();
-        txtRepuestos = new javax.swing.JTextField();
         txtPrecioRepuestos = new javax.swing.JTextField();
         txtNumeroRepuestos = new javax.swing.JTextField();
         txtSubTotal = new javax.swing.JTextField();
         txtISV = new javax.swing.JTextField();
         txtDescuento = new javax.swing.JTextField();
         txtTotalPagar = new javax.swing.JTextField();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTextArea1 = new javax.swing.JTextArea();
+        lblFondo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        getContentPane().setLayout(null);
 
         frmFactura.setAlignment(java.awt.Label.CENTER);
+        frmFactura.setFont(new java.awt.Font("Arial Black", 0, 24)); // NOI18N
         frmFactura.setText("Factura\n");
+        getContentPane().add(frmFactura);
+        frmFactura.setBounds(250, 30, 158, 61);
 
+        jLabel1.setFont(new java.awt.Font("Arial Black", 0, 14)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 204));
         jLabel1.setText("Nombre\n\n");
+        getContentPane().add(jLabel1);
+        jLabel1.setBounds(116, 108, 59, 21);
 
+        jLabel2.setFont(new java.awt.Font("Arial Black", 0, 14)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("RTN");
+        getContentPane().add(jLabel2);
+        jLabel2.setBounds(116, 147, 33, 21);
 
+        jLabel3.setFont(new java.awt.Font("Arial Black", 0, 14)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("Telefono\n");
+        getContentPane().add(jLabel3);
+        jLabel3.setBounds(116, 187, 65, 21);
 
+        jLabel4.setFont(new java.awt.Font("Arial Black", 0, 14)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setText("Placa\n");
+        getContentPane().add(jLabel4);
+        jLabel4.setBounds(116, 227, 42, 21);
 
+        jLabel5.setFont(new java.awt.Font("Arial Black", 0, 14)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
         jLabel5.setText("Repuestos\n\n");
+        getContentPane().add(jLabel5);
+        jLabel5.setBounds(106, 387, 80, 21);
 
-        jLabel6.setText("Precio Repuestos\n");
+        jLabel6.setFont(new java.awt.Font("Arial Black", 0, 11)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel6.setText("Precio de  Repuestos ");
+        getContentPane().add(jLabel6);
+        jLabel6.setBounds(106, 306, 131, 17);
 
-        jLabel7.setText("Numero Repuestos");
+        jLabel7.setFont(new java.awt.Font("Arial Black", 0, 11)); // NOI18N
+        jLabel7.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel7.setText("Cantidad de Repuestos");
+        getContentPane().add(jLabel7);
+        jLabel7.setBounds(104, 268, 138, 17);
 
+        jLabel8.setFont(new java.awt.Font("Arial Black", 0, 14)); // NOI18N
+        jLabel8.setForeground(new java.awt.Color(255, 255, 255));
         jLabel8.setText("Sub Total");
+        getContentPane().add(jLabel8);
+        jLabel8.setBounds(106, 468, 72, 21);
 
+        jLabel9.setFont(new java.awt.Font("Arial Black", 0, 14)); // NOI18N
+        jLabel9.setForeground(new java.awt.Color(255, 255, 255));
         jLabel9.setText("ISV");
+        getContentPane().add(jLabel9);
+        jLabel9.setBounds(106, 508, 26, 21);
 
+        jLabel10.setFont(new java.awt.Font("Arial Black", 0, 12)); // NOI18N
+        jLabel10.setForeground(new java.awt.Color(255, 255, 255));
         jLabel10.setText("Descuento");
+        getContentPane().add(jLabel10);
+        jLabel10.setBounds(106, 548, 69, 18);
 
+        jLabel11.setFont(new java.awt.Font("Arial Black", 0, 12)); // NOI18N
+        jLabel11.setForeground(new java.awt.Color(255, 255, 255));
         jLabel11.setText("Total a Pagar");
+        getContentPane().add(jLabel11);
+        jLabel11.setBounds(98, 586, 88, 18);
 
         txtNombre.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtNombreActionPerformed(evt);
             }
         });
+        getContentPane().add(txtNombre);
+        txtNombre.setBounds(328, 109, 152, 20);
 
         txtRtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtRtnActionPerformed(evt);
             }
         });
+        getContentPane().add(txtRtn);
+        txtRtn.setBounds(328, 149, 152, 20);
+        getContentPane().add(txtTelefono);
+        txtTelefono.setBounds(328, 189, 152, 20);
+        getContentPane().add(txtPlaca);
+        txtPlaca.setBounds(328, 229, 152, 20);
+        getContentPane().add(txtPrecioRepuestos);
+        txtPrecioRepuestos.setBounds(328, 267, 152, 20);
+        getContentPane().add(txtNumeroRepuestos);
+        txtNumeroRepuestos.setBounds(328, 305, 152, 20);
+        getContentPane().add(txtSubTotal);
+        txtSubTotal.setBounds(328, 470, 152, 20);
+        getContentPane().add(txtISV);
+        txtISV.setBounds(328, 510, 152, 20);
+        getContentPane().add(txtDescuento);
+        txtDescuento.setBounds(328, 548, 152, 20);
+        getContentPane().add(txtTotalPagar);
+        txtTotalPagar.setBounds(328, 586, 152, 20);
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap(168, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(jLabel11)
-                                .addComponent(jLabel10)
-                                .addComponent(jLabel9)
-                                .addComponent(jLabel8)
-                                .addComponent(jLabel7)
-                                .addComponent(jLabel6)
-                                .addComponent(jLabel5)
-                                .addComponent(jLabel4)
-                                .addComponent(jLabel3))
-                            .addGap(79, 79, 79)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(txtTelefono)
-                                .addComponent(txtPlaca)
-                                .addComponent(txtRepuestos)
-                                .addComponent(txtPrecioRepuestos)
-                                .addComponent(txtNumeroRepuestos)
-                                .addComponent(txtSubTotal)
-                                .addComponent(txtISV)
-                                .addComponent(txtDescuento)
-                                .addComponent(txtTotalPagar, javax.swing.GroupLayout.DEFAULT_SIZE, 152, Short.MAX_VALUE))
-                            .addGap(183, 183, 183))
-                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                            .addComponent(frmFactura, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGap(245, 245, 245)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel1)
-                            .addComponent(jLabel2))
-                        .addGap(133, 133, 133)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(txtNombre)
-                            .addComponent(txtRtn, javax.swing.GroupLayout.DEFAULT_SIZE, 152, Short.MAX_VALUE))
-                        .addGap(183, 183, 183))))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(frmFactura, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(1, 1, 1)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel1)
-                    .addComponent(txtNombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(20, 20, 20)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel2)
-                    .addComponent(txtRtn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(16, 16, 16)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel3)
-                    .addComponent(txtTelefono, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel4)
-                    .addComponent(txtPlaca, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel5)
-                    .addComponent(txtRepuestos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel6)
-                    .addComponent(txtPrecioRepuestos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel7)
-                    .addComponent(txtNumeroRepuestos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel8)
-                    .addComponent(txtSubTotal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel9)
-                    .addComponent(txtISV, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel10)
-                    .addComponent(txtDescuento, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel11)
-                    .addComponent(txtTotalPagar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(35, Short.MAX_VALUE))
-        );
+        jTextArea1.setColumns(20);
+        jTextArea1.setRows(5);
+        jScrollPane1.setViewportView(jTextArea1);
 
-        frmFactura.getAccessibleContext().setAccessibleName("Factura\n");
+        getContentPane().add(jScrollPane1);
+        jScrollPane1.setBounds(328, 354, 166, 96);
+
+        lblFondo.setIcon(new javax.swing.ImageIcon("C:\\Users\\Dell\\Documents\\proyecto2\\src\\main\\java\\hn\\uth\\poo\\p3\\recursos\\imagenes1\\geometrical-background-design_1078-66.jpg")); // NOI18N
+        getContentPane().add(lblFondo);
+        lblFondo.setBounds(0, -50, 710, 720);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -248,13 +233,15 @@ public class frmFactura extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTextArea jTextArea1;
+    private javax.swing.JLabel lblFondo;
     private javax.swing.JTextField txtDescuento;
     private javax.swing.JTextField txtISV;
     private javax.swing.JTextField txtNombre;
     private javax.swing.JTextField txtNumeroRepuestos;
     private javax.swing.JTextField txtPlaca;
     private javax.swing.JTextField txtPrecioRepuestos;
-    private javax.swing.JTextField txtRepuestos;
     private javax.swing.JTextField txtRtn;
     private javax.swing.JTextField txtSubTotal;
     private javax.swing.JTextField txtTelefono;

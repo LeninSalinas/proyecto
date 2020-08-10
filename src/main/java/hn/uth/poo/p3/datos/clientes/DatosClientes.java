@@ -25,7 +25,7 @@ public class DatosClientes {
         try {
             Connection cn=Conexion.ObtenerConexion();
             Statement st=cn.createStatement();
-            String sql="SELECT NOMBRE, IDENTIDAD, RTN, LICENCIA, TELEFONO, CORREO, DIRECCION FROM CLIENTE";
+            String sql="SELECT NOMBRE, ID, RTN, LICENCIA, TELEFONO, CORREO, DIRECCION FROM CLIENTE";
             ResultSet rs=st.executeQuery(sql);
             while (rs.next()) {                
                 Cliente cliente=new Cliente();
@@ -43,12 +43,12 @@ public class DatosClientes {
         }
         return Clientes;
     }
-    public static String InsertarClientes(Cliente clientes){
+    public static String InsertarClientes(Cliente clientes) throws SQLException{
         try {
             Connection cn=Conexion.ObtenerConexion();
             String sql="INSERT INTO CLIENTE VALUES(?,?,?,?,?,?,?)";
-            PreparedStatement ps=cn.prepareStatement(sql);
-            ps.setString(1, clientes.getNombre());
+            PreparedStatement ps=cn.prepareStatement(sql);   
+            ps.setString(1, clientes.getNombre());     
             ps.setInt(2, clientes.getId());
             ps.setInt(3, clientes.getRtn());
             ps.setString(4, clientes.getLicencia());  
@@ -58,7 +58,9 @@ public class DatosClientes {
             ps.execute();
             ps.close();
             cn.close();
-        } catch (Exception e) {
+        } catch(SQLException e){
+            throw new SQLException(e.getMessage());
+        }catch (Exception e) {
             e.printStackTrace();
             return "Error "+ e.getMessage();
         }
@@ -67,19 +69,19 @@ public class DatosClientes {
     public static String ActualizarClientes(Cliente clientes){
         try {
             Connection cn=Conexion.ObtenerConexion();
-            String sql="UPDATE CLIENTES SET IDENTIDAD=? WHERE NOMBRE=?";
-            PreparedStatement ps=cn.prepareStatement(sql);
-            ps.setString(1, clientes.getNombre());
-            ps.setInt(2, clientes.getId());
-            ps.setInt(3, clientes.getRtn());
-            ps.setString(4, clientes.getLicencia());  
-            ps.setInt(5, clientes.getTelefono());
-            ps.setString(6, clientes.getCorreo()); 
-            ps.setString(7, clientes.getDireccion());
+            String sql="UPDATE CLIENTE SET ID=?, RTN=?, LICENCIA=?, TELEFONO=?, CORREO=?, DIRECCION=? WHERE NOMBRE=?";
+            PreparedStatement ps=cn.prepareStatement(sql);       
+            ps.setInt(1, clientes.getId()); 
+            ps.setInt(2, clientes.getRtn());
+            ps.setString(3, clientes.getLicencia());  
+            ps.setInt(4, clientes.getTelefono());
+            ps.setString(5, clientes.getCorreo()); 
+            ps.setString(6, clientes.getDireccion());   
+            ps.setString(7, clientes.getNombre()); 
             ps.execute();
             ps.close();
             cn.close();
-        } catch (Exception e) {
+        }catch (Exception e) {
             e.printStackTrace();
             return "Error "+ e.getMessage();
         }
@@ -88,15 +90,9 @@ public class DatosClientes {
     public static String EliminarCliente(Cliente clientes){
         try {
             Connection cn=Conexion.ObtenerConexion();
-            String sql="DELETE CLIENTES SET IDENTIDAD=? WHERE NOMBRE=?";
+            String sql="DELETE FROM CLIENTE WHERE NOMBRE=?";
             PreparedStatement ps=cn.prepareStatement(sql);
             ps.setString(1, clientes.getNombre());
-            ps.setInt(2, clientes.getId());
-            ps.setInt(3, clientes.getRtn());
-            ps.setString(4, clientes.getLicencia());  
-            ps.setInt(5, clientes.getTelefono());
-            ps.setString(6, clientes.getCorreo()); 
-            ps.setString(7, clientes.getDireccion());
             ps.execute();
             ps.close();
             cn.close();
@@ -104,6 +100,7 @@ public class DatosClientes {
             e.printStackTrace();
             return "Error "+ e.getMessage();
         }
+        
         return null;
     }
     public static List<Cliente> BuscarClientes(Cliente clientes)throws SQLException{
@@ -111,7 +108,7 @@ public class DatosClientes {
         try {
             Connection cn=Conexion.ObtenerConexion();
             Statement st=cn.createStatement();
-            String sql="SELECT NOMBRES, IDENTIDAD FROM CLIENTES WHERE UPPER(NOMBRE) LIKE ?";
+            String sql="SELECT NOMBRE, ID, FROM CLIENTE WHERE UPPER(NOMBRE) LIKE ?";
             PreparedStatement ps=cn.prepareStatement(sql);
             ps.setString(1, "%"+clientes.getNombre().toUpperCase()+"%");
             ResultSet rs=ps.executeQuery();

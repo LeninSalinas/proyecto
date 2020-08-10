@@ -6,7 +6,6 @@
 package hn.uth.poo.p3.datos.Mecanico;
 
 import hn.uth.poo.p3.datos.conexion.Conexion;
-import hn.uth.poo.p3.recursos.clases.Marca;
 import hn.uth.poo.p3.recursos.clases.Mecanico;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -26,11 +25,13 @@ public class DatosMecanico {
         try {
             Connection cn=Conexion.ObtenerConexion();
             Statement st=cn.createStatement();
-            String sql="SELECT MECANICO, FROM MECANICO";
+            String sql="SELECT NOMBRE, IDENTIDAD, MECANICO, FROM MECANICO";
             ResultSet rs=st.executeQuery(sql);
             while (rs.next()) {                
-                Mecanico mecanico=new Mecanico();            
-                mecanico.setNumeroEmpleado(rs.getInt(1));
+                Mecanico mecanico=new Mecanico();   
+                mecanico.setNombre(rs.getString(1));
+                mecanico.setId(rs.getInt(4));
+                mecanico.setNumeroEmpleado(rs.getInt(3));
                 Mecanico.add(mecanico);
             }
             cn.close();
@@ -43,8 +44,9 @@ public class DatosMecanico {
             Connection cn=Conexion.ObtenerConexion();
             String sql="INSERT INTO MECANICO VALUES(?,?,?,?,?,?)";
             PreparedStatement ps=cn.prepareStatement(sql);
-            ps.setInt(1, mecanico.getNumeroEmpleado());
-          
+            ps.setString(1, mecanico.getNombre());
+            ps.setInt(2, mecanico.getId());
+            ps.setInt(3, mecanico.getNumeroEmpleado());          
             ps.execute();
             ps.close();
             cn.close();
@@ -59,7 +61,9 @@ public class DatosMecanico {
             Connection cn=Conexion.ObtenerConexion();
             String sql="UPDATE MECANICO SET NUMERO EMPLEADO=? WHERE MECANICO=?";
             PreparedStatement ps=cn.prepareStatement(sql);
-             ps.setInt(1, mecanico.getNumeroEmpleado());
+            ps.setString(1, mecanico.getNombre());
+            ps.setInt(2, mecanico.getId());
+            ps.setInt(3, mecanico.getNumeroEmpleado()); 
             ps.execute();
             ps.execute();
             ps.close();
@@ -75,7 +79,9 @@ public class DatosMecanico {
             Connection cn=Conexion.ObtenerConexion();
             String sql="DELETE MARCA SET MARCA=? WHERE MARCA=?";
             PreparedStatement ps=cn.prepareStatement(sql);
-            ps.setInt(1, mecanico.getNumeroEmpleado());
+            ps.setString(1, mecanico.getNombre());
+            ps.setInt(2, mecanico.getId());
+            ps.setInt(3, mecanico.getNumeroEmpleado()); 
             ps.execute();
             ps.execute();
             ps.close();

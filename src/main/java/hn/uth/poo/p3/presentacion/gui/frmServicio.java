@@ -9,7 +9,7 @@ package hn.uth.poo.p3.presentacion.gui;
  *
  * @author Dell
  */
-public class frmServicio extends javax.swing.JInternalFrame {
+public class frmServicio extends javax.swing.JFrame {
 
     /**
      * Creates new form frmServicio
@@ -27,103 +27,82 @@ public class frmServicio extends javax.swing.JInternalFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        lblServicio = new javax.swing.JLabel();
         lblNombre = new javax.swing.JLabel();
         lblCodigo = new javax.swing.JLabel();
         lblPrecio = new javax.swing.JLabel();
         txtNombre = new javax.swing.JTextField();
+        lblServicio = new javax.swing.JLabel();
         txtCodigo = new javax.swing.JTextField();
         txtPrecio = new javax.swing.JTextField();
         cboLista = new javax.swing.JComboBox<>();
-        jButton1 = new javax.swing.JButton();
+        btnServicio = new javax.swing.JButton();
+        jPanel1 = new javax.swing.JPanel();
+        lblFondo = new javax.swing.JLabel();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        getContentPane().setLayout(null);
 
-        lblServicio.setText("Seccion Servicio");
-
+        lblNombre.setFont(new java.awt.Font("Arial Black", 0, 12)); // NOI18N
         lblNombre.setText("Nombre");
+        getContentPane().add(lblNombre);
+        lblNombre.setBounds(44, 63, 60, 18);
 
+        lblCodigo.setFont(new java.awt.Font("Arial Black", 0, 12)); // NOI18N
         lblCodigo.setText("Id del Cliente");
+        getContentPane().add(lblCodigo);
+        lblCodigo.setBounds(44, 103, 100, 18);
 
+        lblPrecio.setFont(new java.awt.Font("Arial Black", 0, 12)); // NOI18N
         lblPrecio.setText("Precio del servicio");
+        getContentPane().add(lblPrecio);
+        lblPrecio.setBounds(30, 150, 130, 20);
 
         txtNombre.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtNombreActionPerformed(evt);
             }
         });
+        getContentPane().add(txtNombre);
+        txtNombre.setBounds(176, 60, 97, 20);
+
+        lblServicio.setFont(new java.awt.Font("Arial Black", 0, 18)); // NOI18N
+        lblServicio.setText("Seccion Servicio");
+        getContentPane().add(lblServicio);
+        lblServicio.setBounds(110, 10, 180, 30);
 
         txtCodigo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtCodigoActionPerformed(evt);
             }
         });
+        getContentPane().add(txtCodigo);
+        txtCodigo.setBounds(176, 100, 97, 20);
 
         txtPrecio.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtPrecioActionPerformed(evt);
             }
         });
+        getContentPane().add(txtPrecio);
+        txtPrecio.setBounds(176, 150, 97, 20);
 
         cboLista.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Lavado\t", "Alineado", "Balanceo", "Lavado de Motor", "Pintar el carro", "Enderesamiento", "Cambio de aceite", "Revisado de los borners", "Mantenimiento del carro", "Sistemas de freno", "Servicio Electronico", "Baterias", "Mecanica ligera", "Sistema de inyeccion", " ", " " }));
+        getContentPane().add(cboLista);
+        cboLista.setBounds(44, 215, 140, 20);
 
-        jButton1.setText("Añadir servicio");
+        btnServicio.setText("Añadir servicio");
+        getContentPane().add(btnServicio);
+        btnServicio.setBounds(150, 267, 103, 23);
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(lblServicio)
-                        .addGap(30, 30, 30))
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                        .addGap(44, 44, 44)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(cboLista, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(0, 0, Short.MAX_VALUE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(lblCodigo)
-                                    .addComponent(lblNombre)
-                                    .addComponent(lblPrecio))
-                                .addGap(47, 47, 47)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(txtPrecio)
-                                    .addComponent(txtNombre, javax.swing.GroupLayout.DEFAULT_SIZE, 97, Short.MAX_VALUE)
-                                    .addComponent(txtCodigo, javax.swing.GroupLayout.DEFAULT_SIZE, 97, Short.MAX_VALUE))))))
-                .addGap(127, 127, 127))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(jButton1)
-                .addGap(147, 147, 147))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(22, 22, 22)
-                .addComponent(lblServicio)
-                .addGap(24, 24, 24)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblNombre)
-                    .addComponent(txtNombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(20, 20, 20)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblCodigo)
-                    .addComponent(txtCodigo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(30, 30, 30)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblPrecio)
-                    .addComponent(txtPrecio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(45, 45, 45)
-                .addComponent(cboLista, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(32, 32, 32)
-                .addComponent(jButton1)
-                .addContainerGap(60, Short.MAX_VALUE))
-        );
+        jPanel1.setBackground(new java.awt.Color(0, 0, 255));
+        jPanel1.setLayout(null);
+
+        lblFondo.setIcon(new javax.swing.ImageIcon("C:\\Users\\Dell\\Documents\\proyecto2\\src\\main\\java\\hn\\uth\\poo\\p3\\recursos\\imagenes1\\car-mechanic-3671448_960_720.png")); // NOI18N
+        jPanel1.add(lblFondo);
+        lblFondo.setBounds(0, 0, 400, 300);
+
+        getContentPane().add(jPanel1);
+        jPanel1.setBounds(0, 0, 400, 300);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -140,12 +119,48 @@ public class frmServicio extends javax.swing.JInternalFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtPrecioActionPerformed
 
+/**
+     * @param args the command line arguments
+     */
+    public static void main(String args[]) {
+        /* Set the Nimbus look and feel */
+        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
+        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
+         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
+         */
+        try {
+            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
+                if ("Nimbus".equals(info.getName())) {
+                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
+                    break;
+                }
+            }
+        } catch (ClassNotFoundException ex) {
+            java.util.logging.Logger.getLogger(frmPrincipal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (InstantiationException ex) {
+            java.util.logging.Logger.getLogger(frmPrincipal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (IllegalAccessException ex) {
+            java.util.logging.Logger.getLogger(frmPrincipal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+            java.util.logging.Logger.getLogger(frmPrincipal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        }
+        //</editor-fold>
+        //</editor-fold>
 
+        /* Create and display the form */
+        java.awt.EventQueue.invokeLater(new Runnable() {
+            public void run() {
+                new frmServicio().setVisible(true);
+            }
+        });
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnServicio;
     private javax.swing.JComboBox<String> cboLista;
-    private javax.swing.JButton jButton1;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JLabel lblCodigo;
+    private javax.swing.JLabel lblFondo;
     private javax.swing.JLabel lblNombre;
     private javax.swing.JLabel lblPrecio;
     private javax.swing.JLabel lblServicio;
